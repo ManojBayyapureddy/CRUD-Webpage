@@ -5,7 +5,9 @@ from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from models import Base, User  # your SQLAlchemy models
+from database import engine, SessionLocal, Base
+from models import User
+  # your SQLAlchemy models
 
 # ------------------- DATABASE SETUP -------------------
 DATABASE_URL = os.environ.get("DATABASE_URL")  # Render internal URL
